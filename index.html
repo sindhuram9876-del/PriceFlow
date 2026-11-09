@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PriceFlow | Simple Pricing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#">PriceFlow<span></span></a>
+  <nav>
+    <a href="#pricing">Pricing</a>
+    <a href="#comparison">Compare</a>
+    <a href="#tools">Tools</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark mode</button>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">SIMPLE. FLEXIBLE. TRANSPARENT.</p>
+  <h1>Plans that grow<br>with <span>your team.</span></h1>
+  <p>Choose the right plan for your next big idea.</p>
+  <div class="billing-switch">
+    <button class="billing-button active" data-billing="monthly">Monthly</button>
+    <button class="billing-button" data-billing="yearly">Yearly <small>Save 20%</small></button>
+  </div>
+  <p class="muted">Prices shown in Indian Rupees (INR).</p>
+</section>
+
+<main>
+<section class="section" id="pricing">
+  <h2>Choose your plan</h2>
+  <p class="section-intro">Straightforward pricing with everything you need.</p>
+
+  <div class="recommendation-card tool-card">
+    <h3>Not sure which plan to choose?</h3>
+    <p class="muted">Answer a few questions and find your best plan.</p>
+    <label for="recommendMembers">How many team members do you have?</label>
+    <input type="number" id="recommendMembers" min="1" max="500" step="1" value="1">
+    <p class="label-like">Which features do you need?</p>
+    <label class="check-label"><input type="checkbox" id="needAnalytics"> Advanced analytics</label>
+    <label class="check-label"><input type="checkbox" id="needCollaboration"> Team collaboration</label>
+    <label class="check-label"><input type="checkbox" id="needWorkspace"> Custom workspace</label>
+    <button id="getRecommendation" class="primary-cta">Find My Plan</button>
+    <p id="recommendationResult" class="result-text"></p>
+  </div>
+
+  <div class="pricing-grid">
+    <article class="price-card" data-plan-card="Starter">
+      <div class="plan-icon">✦</div>
+      <p class="eyebrow">FOR INDIVIDUALS</p>
+      <h3>Starter</h3>
+      <p>Great for getting started.</p>
+      <div class="price-line" id="starterPrice">₹199</div>
+      <span class="price-unit">per month</span>
+      <span class="billing-total" id="starterTotal"></span>
+      <span class="savings-info" id="starterSavings"></span>
+      <button class="plan-cta" data-select="Starter">Choose Starter</button>
+      <button class="text-button save-plan" data-save="Starter">♡ Save plan</button>
+      <ul>
+        <li>✓ Basic dashboard</li>
+        <li>✓ Up to 3 projects</li>
+        <li>✓ Email support</li>
+      </ul>
+    </article>
+
+    <article class="price-card popular-card" data-plan-card="Pro">
+      <span class="popular-ribbon">POPULAR</span>
+      <div class="plan-icon">◆</div>
+      <p class="eyebrow">FOR PROFESSIONALS</p>
+      <h3>Pro</h3>
+      <p>More power for growing work.</p>
+      <div class="price-line" id="proPrice">₹499</div>
+      <span class="price-unit">per month</span>
+      <span class="billing-total" id="proTotal"></span>
+      <span class="savings-info" id="proSavings"></span>
+      <button class="plan-cta primary-cta" data-select="Pro">Choose Pro</button>
+      <button class="text-button save-plan" data-save="Pro">♡ Save plan</button>
+      <ul>
+        <li>✓ Everything in Starter</li>
+        <li>✓ Advanced analytics</li>
+        <li>✓ Unlimited projects</li>
+        <li>✓ Priority support</li>
+      </ul>
+    </article>
+
+    <article class="price-card" data-plan-card="Team">
+      <div class="plan-icon">⬡</div>
+      <p class="eyebrow">FOR TEAMS</p>
+      <h3>Team</h3>
+      <p>Built for collaboration at scale.</p>
+      <div class="price-line" id="teamPrice">₹999</div>
+      <span class="price-unit">per month</span>
+      <span class="billing-total" id="teamTotal"></span>
+      <span class="savings-info" id="teamSavings"></span>
+      <button class="plan-cta" data-select="Team">Choose Team</button>
+      <button class="text-button save-plan" data-save="Team">♡ Save plan</button>
+      <ul>
+        <li>✓ Everything in Pro</li>
+        <li>✓ Team collaboration</li>
+        <li>✓ Custom workspace</li>
+        <li>✓ Dedicated support</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="comparison">
+  <h2>Compare plans</h2>
+  <p class="section-intro">See what is included in each plan.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Features</th><th>Starter</th><th>Pro</th><th>Team</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Projects</td><td>3</td><td>Unlimited</td><td>Unlimited</td></tr>
+        <tr><td>Analytics</td><td>Basic</td><td>Advanced</td><td>Advanced</td></tr>
+        <tr><td>Collaboration</td><td>—</td><td>—</td><td>✓</td></tr>
+        <tr><td>Custom workspace</td><td>—</td><td>—</td><td>✓</td></tr>
+        <tr><td>Support</td><td>Email</td><td>Priority</td><td>Dedicated</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <h2>Smart pricing tools</h2>
+  <p class="section-intro">Calculate costs and explore your options.</p>
+
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h3>Currency converter</h3>
+      <label for="currencyAmount">Amount in INR</label>
+      <input type="number" id="currencyAmount" min="0" value="499">
+      <div class="converted-prices">
+        <div class="converted-item"><span>USD</span><strong id="usdValue">$5.99</strong></div>
+        <div class="converted-item"><span>EUR</span><strong id="eurValue">€5.52</strong></div>
+        <div class="converted-item"><span>GBP</span><strong id="gbpValue">£4.73</strong></div>
+      </div>
+      <p class="muted">Illustrative rates only; not live exchange rates.</p>
+    </div>
+
+    <div class="tool-card">
+      <h3>Team size calculator</h3>
+      <label for="teamSize">Number of team members</label>
+      <input type="number" id="teamSize" min="1" max="500" step="1" value="5">
+      <label for="teamPlan">Price per member</label>
+      <select id="teamPlan">
+        <option value="999">Team – ₹999</option>
+        <option value="499">Pro – ₹499</option>
+      </select>
+      <div class="calculator-result">
+        <p>Estimated monthly cost</p>
+        <h3 id="teamCost">₹4,995</h3>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>Subscription duration calculator</h3>
+      <label for="durationPlan">Choose a plan</label>
+      <select id="durationPlan">
+        <option value="Starter">Starter</option>
+        <option value="Pro" selected>Pro</option>
+        <option value="Team">Team</option>
+      </select>
+      <label for="durationMonths">Subscription duration (months)</label>
+      <input type="number" id="durationMonths" min="1" max="60" value="12">
+      <div class="calculator-result">
+        <p>Estimated subscription cost</p>
+        <h3 id="durationCost">₹5,988</h3>
+        <p id="durationNote" class="muted">Monthly billing estimate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="discounts">
+  <h2>Extra savings</h2>
+  <p class="section-intro">Try a demo coupon or referral code on your selected plan.</p>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h3>Discount coupon</h3>
+      <label for="couponInput">Coupon code</label>
+      <input id="couponInput" type="text" placeholder="Try SAVE10">
+      <button class="primary-cta" id="applyCoupon">Apply coupon</button>
+      <p id="couponMessage" class="result-text"></p>
+    </div>
+    <div class="tool-card">
+      <h3>Referral discount</h3>
+      <label for="referralInput">Referral code</label>
+      <input id="referralInput" type="text" placeholder="Try FRIEND5">
+      <button class="primary-cta" id="applyReferral">Apply referral</button>
+      <p id="referralMessage" class="result-text"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Your saved plans</h2>
+  <p class="section-intro">Your wishlist is saved in this browser.</p>
+  <div class="tool-card">
+    <div id="wishlistList" class="saved-list">No saved plans yet.</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Pricing history</h2>
+  <p class="section-intro">Recent plan selections and estimated totals on this device.</p>
+  <div class="tool-card">
+    <div id="historyList" class="history-list">No pricing history yet.</div>
+    <button class="text-button" id="clearHistory">Clear history</button>
+  </div>
+</section>
+
+<section class="section" id="checkout">
+  <h2>Plan summary</h2>
+  <p class="section-intro">Review your selection before continuing.</p>
+  <div class="tool-card checkout-card">
+    <div class="summary-row"><span>Selected plan</span><strong id="summaryPlan">No plan selected</strong></div>
+    <div class="summary-row"><span>Billing</span><strong id="summaryBilling">Select a plan</strong></div>
+    <div class="summary-row"><span>Base price</span><strong id="summaryBase">—</strong></div>
+    <div class="summary-row"><span>Coupon discount</span><strong id="summaryCoupon">—</strong></div>
+    <div class="summary-row"><span>Referral discount</span><strong id="summaryReferral">—</strong></div>
+    <div class="summary-row total-row"><span>Estimated total</span><strong id="summaryPrice">—</strong></div>
+    <button class="plan-cta primary-cta" id="checkoutButton" disabled>Continue (Demo)</button>
+    <p class="muted">Demo preview only. No payment or subscription will be created.</p>
+  </div>
+  <div class="download-row">
+    <button class="secondary-button" id="downloadPdf">Download Pricing PDF</button>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <h2>What users say</h2>
+  <p class="section-intro">Sample testimonials for this demo website.</p>
+  <div class="reviews-grid">
+    <article class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>“The pricing is easy to understand and compare.”</p>
+      <h4>Alex</h4><small>Independent creator</small>
+    </article>
+    <article class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>“The plan options make choosing simple for our team.”</p>
+      <h4>Jamie </h4><small>Team lead</small>
+    </article>
+    <article class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>“A clean way to estimate subscription costs.”</p>
+      <h4>Sam </h4><small>Small business owner</small>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-list">
+    <details><summary>Can I change my plan later?</summary><p>This demo illustrates plan selection. Real plan changes depend on the service provider.</p></details>
+    <details><summary>Are the displayed prices real subscriptions?</summary><p>No. PriceFlow is a front-end demo and does not process payments.</p></details>
+    <details><summary>Are currency conversions live?</summary><p>No. The displayed conversion rates are sample estimates.</p></details>
+    <details><summary>How do coupons work?</summary><p>Use SAVE10 for a sample 10% coupon discount. FRIEND5 applies a sample 5% referral discount.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="brand" href="#">PriceFlow<span>.</span></a>
+  <p>© <span id="year"></span> PriceFlow. Demo pricing website.</p>
+</footer>
+
+<div class="modal" id="featureModal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+    <p class="eyebrow">PLAN DETAILS</p>
+    <h2 id="modalTitle">Plan</h2>
+    <p id="modalDescription"></p>
+    <ul id="modalFeatures"></ul>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
