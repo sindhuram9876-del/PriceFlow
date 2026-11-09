@@ -158,15 +158,15 @@ function updatePrices() {
     });
 
     document.querySelectorAll(".billing-button")
-        .forEach(button => {
-            button.classList.toggle(
-                "active",
-                button.dataset.billing === billingType
-            );
-        });
+    .forEach(button => {
+        const isActive = button.dataset.billing === billingType;
 
-    updateCheckout();
-    updateDuration();
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", isActive);
+    });
+
+updateCheckout();
+updateDuration();
 }
 
 document.querySelectorAll(".billing-button")

@@ -23,9 +23,22 @@
   <h1>Plans that grow<br>with <span>your team.</span></h1>
   <p>Choose the right plan for your next big idea.</p>
   <div class="billing-switch">
-    <button class="billing-button active" data-billing="monthly">Monthly</button>
-    <button class="billing-button" data-billing="yearly">Yearly <small>Save 20%</small></button>
-  </div>
+  <button
+    class="billing-button active"
+    type="button"
+    data-billing="monthly"
+    aria-pressed="true">
+    Monthly
+  </button>
+
+  <button
+    class="billing-button"
+    type="button"
+    data-billing="yearly"
+    aria-pressed="false">
+    Yearly <small>Save 20%</small>
+  </button>
+</div>
   <p class="muted">Prices shown in Indian Rupees (INR).</p>
 </section>
 
@@ -48,6 +61,7 @@
   </div>
 
   <div class="pricing-grid">
+    
     <article class="price-card" data-plan-card="Starter">
       <div class="plan-icon">✦</div>
       <p class="eyebrow">FOR INDIVIDUALS</p>

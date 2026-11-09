@@ -1068,3 +1068,18 @@ body:not(.dark-mode)::after {
         box-shadow: 0 0 18px rgba(165, 195, 107, 0.8);
     }
 }
+
+@media screen and (max-width: 800px) {
+    .pricing-grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .pricing-grid > article.popular-card {
+        order: -1 !important;
+    }
+
+    .pricing-grid > article:not(.popular-card) {
+        order: 0 !important;
+    }
+}
